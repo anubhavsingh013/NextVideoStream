@@ -1,0 +1,28 @@
+.show-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .show-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .show-info {
+    padding: 10px;
+  }
+  
+  .show-rating {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+  .show-rating span {
+    font-size: 1.5em;
+    color: #f5c518; /* Gold color for stars */
+  }
+  
