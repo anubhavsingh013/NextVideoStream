@@ -10,3 +10,10 @@
     gap: 20px;
   }
   
+  .hideDisplay{
+    display: none;
+  }
+  .selected-suggestion{
+    cursor: pointer;
+  }
+  

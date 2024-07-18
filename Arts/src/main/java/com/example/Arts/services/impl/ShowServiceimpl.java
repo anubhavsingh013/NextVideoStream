@@ -1,5 +1,6 @@
 package com.example.Arts.services.impl;
 
+import com.example.Arts.entity.Images;
 import com.example.Arts.entity.Show;
 import com.example.Arts.repository.ShowRepository;
 import com.example.Arts.services.ShowService;
@@ -35,19 +36,34 @@ public class ShowServiceimpl implements ShowService {
     }
 
     @Override
+    public Show getShowsByShowId(Long id) {
+        Show show=showRepository.findById(id).get();
+        // filterShowsPrice(show);
+        // showPrice_to_ConsumerPrice(show);
+        return show;
+    }
+
+    // @Override
+    // public List<Show> getShowByTitle(String title){
+    //     return showRepository.findShowByTitle(title); 
+    // }
+    
+    @Override
     public Show saveShow(Show show) {
         return showRepository.save(show);
     }
 
+    // @Override
+    // public Show saveImage(Images img) {
+    //     return showRepository.save(img);
+    // }
+
     private void showPrice_to_ConsumerPrice(List<Show> shows) {
-        // for (Show show : shows) {
-        //     double initialPrice=show.getPrice();
-        //     double initialRating=show.getRating();
-        //     System.out.println(show.getPrice()+" "+show.getRating());
-        //     double customerPrice = initialPrice+(initialPrice*0.1*initialRating);
-        //     System.out.println(customerPrice+" ** "+customerPrice);
-        //     show.setPrice(customerPrice);
-        // }
+        for (Show show : shows) {
+            
+            double customerPrice = (show.getPrice()+(show.getPrice()*(show.getRating()*0.1)));
+            show.setPrice(customerPrice);
+        }
     }
 
     private void filterShowsPrice(List<Show> shows) {

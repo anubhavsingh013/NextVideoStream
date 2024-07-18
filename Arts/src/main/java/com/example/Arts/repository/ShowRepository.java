@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ShowRepository extends CrudRepository<Show, Long> {
     List<Show> findByPlatformName(String platformName);
+    List<Show> findShowByTitle(String title);
 }

@@ -4,10 +4,13 @@
     overflow: hidden;
     width: 200px;
     text-align: center;
+    margin: 10px;
     padding: 10px;
   }
   
   .show-image {
+    /* width: 150px;
+    height: 100px; */
     width: 100%;
     height: auto;
   }

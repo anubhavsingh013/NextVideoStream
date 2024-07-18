@@ -16,7 +16,6 @@ public class ShowController {
 
     @GetMapping
     public List<Show> getAllShows() {
-        System.out.println(showService.getAllShows());
         return showService.getAllShows();
     }
 
@@ -24,4 +23,18 @@ public class ShowController {
     public List<Show> getShowsByPlatformName(@PathVariable String platformName) {
         return showService.getShowsByPlatformName(platformName);
     }
+    @GetMapping("/{id}")
+    public Show getShowsByShowId(@PathVariable Long id) {
+        return showService.getShowsByShowId(id);
+    }
+    // @GetMapping("/s/{search}")
+    // public List<Show> getShowByTitle(@PathVariable String title) {
+    //     return showService.getShowByTitle(title);
+    // }
+    
+    @PostMapping
+    public Show saveShow(@RequestBody Show show) {
+        return showService.saveShow(show);
+    }
+    
 }
