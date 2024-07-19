@@ -1,8 +1,12 @@
 .home {
     padding: 20px;
     text-align: center;
+    
   }
-  
+.form-wrappper{
+    display: flex;
+    justify-content: space-between;
+}
   .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +18,14 @@
     display: none;
   }
   .selected-suggestion{
+    
     cursor: pointer;
   }
   
+  .text{
+    background-color: rgb(227, 221, 221);
+  }
+
+  .form-component{
+    margin: 20px;
+  }

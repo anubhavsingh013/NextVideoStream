@@ -21,4 +21,13 @@
     max-width: 200px;
     height: auto;
   }
+.image-gallery{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  .slider{
+    width: 300px;
+    height: 200px;
+  }
   

@@ -33,47 +33,59 @@
 
 // export default ShowCard;
 
-
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-
+import * as React from "react";
+import { Link } from "react-router-dom";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 
 const ShowCard = (props) => {
   const { show = {} } = props;
   return (
-    <Card sx={{ maxWidth: 200,  margin: '20px' }}>
-      <CardMedia
-        component="img"
-        alt={show.title}
-        height="140"
-        image={show.imagelist[0]?.imageUrl || "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_tiger_female.jpg/1200px-Walking_tiger_female.jpg"}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {show.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Rating: {show.rating}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Price: ${Math.round(show.price*100)/100}
-        </Typography>
-      </CardContent>
-      <CardActions>
-      <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
-          <Link to={`/carddetail/${show.id}`} style={{ textDecoration: 'none' }}>
-            <Button size="small" variant="contained">View More</Button>
-          </Link>
-        </Box>
-      </CardActions>
-    </Card>
+    <Link to={`/carddetail/${show.id}`} style={{ textDecoration: "none" }}>
+      <Card
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexDirection: "column",
+          backgroundColor: "lightgrey",
+        }}
+      >
+        <CardMedia
+          component="img"
+          alt={show.title}
+          height="140"
+          image={
+            show.imagelist[0]?.imageUrl ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Walking_tiger_female.jpg/1200px-Walking_tiger_female.jpg"
+          }
+        />
+
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {show.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Rating: {show.rating}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Price: ${Math.round(show.price * 100) / 100}
+          </Typography>
+        </CardContent>
+
+        <CardActions>
+          <Box sx={{ flexGrow: 1, display: "flex", justifyContent: "center" }}>
+            <Button size="small" variant="contained">
+              View More
+            </Button>
+          </Box>
+        </CardActions>
+      </Card>
+    </Link>
   );
 };
 
